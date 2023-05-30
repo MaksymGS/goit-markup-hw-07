@@ -126,16 +126,7 @@ img {
 }
 
 /* Addres link style */
-.link-addr {
-  color: var(--text-descr);
-  font-style: normal;
-  padding: 24px 0;
-  transition: color var(--transf-units);
-}
-.link-addr:hover,
-.link-addr:focus {
-  color: var(--hover-element);
-}
+
 .link-logo {
   font-family: "Raleway", sans-serif;
   font-weight: 800;
@@ -223,18 +214,7 @@ img {
     0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 /* Text Styles */
-.slogan {
-  font-weight: 700;
-  font-size: 56px;
-  line-height: 1.07;
-  letter-spacing: 0.02em;
-  color: var(--back-color);
-  text-align: center;
-  max-width: 496px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 48px;
-}
+
 .section-title {
   font-weight: 700;
   font-size: 36px;
@@ -266,8 +246,8 @@ img {
   background-color: var(--back-color);
   text-align: center;
   border-radius: 0px 0px 4px 4px;
-  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
-    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16),
+    0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
 /**
@@ -278,8 +258,8 @@ img {
 .header {
   background-color: var(--back-color);
   border-bottom: 1px solid var(--nav-border);
-  box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
-    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
+  box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16),
+    0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 .header-container {
   display: flex;
@@ -298,6 +278,49 @@ img {
 @media (min-width: 768px) {
   .header-nav-list {
     display: flex;
+  }
+}
+.header-addr-list {
+  display: none;
+  align-items: center;
+  gap: 40px;
+}
+@media (min-width: 768px) {
+  .header-addr-list {
+    display: block;
+  }
+}
+@media (min-width: 1158px) {
+  .header-addr-list {
+    display: flex;
+  }
+}
+.link-addr {
+  color: var(--text-descr);
+  font-style: normal;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  transition: color var(--transf-units);
+}
+@media only screen and (min-width: 1158px) {
+  .link-addr {
+    color: var(--text-descr);
+    font-size: inherit;
+    line-height: inherit;
+    padding: 24px 0;
+  }
+}
+.link-addr:hover,
+.link-addr:focus {
+  color: var(--hover-element);
+}
+.link-addr-item:not(:last-child) {
+  margin-bottom: 12px;
+}
+@media only screen and (min-width: 1158px) {
+  .link-addr-item:not(:last-child) {
+    margin-bottom: 0;
   }
 }
 .menu-toggle {
@@ -377,6 +400,9 @@ img {
 .mobile-menu {
   margin-bottom: auto;
 }
+.mobile-menu-item:not(:last-child) {
+  margin-bottom: 40px;
+}
 .mobile-menu .link {
   display: block;
 }
@@ -398,8 +424,6 @@ img {
   letter-spacing: 0.02em;
   text-align: left;
   text-transform: capitalize;
-
-  margin-bottom: 40px;
 }
 
 .mobile-link.active {
@@ -429,17 +453,44 @@ img {
   align-items: center;
   text-align: center;
 
-  letter-spacing: 0.02em;
-
   background-color: var(--heeader-color);
-  background-image: linear-gradient(
-      rgba(46, 47, 66, 0.7),
-      rgba(46, 47, 66, 0.7)
-    ),
+  background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
     url(../images/hero-back-image.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+@media only screen and (max-width: 1158px) {
+  .hero-container {
+    padding: 112px 0;
+  }
+}
+.slogan {
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 1.07;
+  color: var(--back-color);
+  text-align: center;
+  max-width: 496px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 48px;
+}
+@media only screen and (max-width: 768px) {
+  .slogan {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.11;
+    margin-bottom: 72px;
+    max-width: 320px;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .slogan {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 1.25;
+  }
 }
 /**
   |============================
@@ -579,6 +630,7 @@ img {
   flex-wrap: wrap;
   padding: 0px;
   gap: 72px 24px;
+  justify-content: center;
 }
 @media only screen and (min-width: 768px) {
   .team-list-container {
@@ -586,17 +638,7 @@ img {
   }
 }
 .team-list-block {
-  width: calc((100%) / 1);
-}
-@media only screen and (min-width: 768px) {
-  .team-list-block {
-    width: calc((100% - 48px) / 2);
-  }
-}
-@media only screen and (min-width: 1158px) {
-  .team-list-block {
-    width: calc((100% - 72px) / 4);
-  }
+  max-width: 264px;
 }
 .descr-team {
   padding-bottom: 8px;
@@ -652,22 +694,26 @@ img {
 .customers-list-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 72px 24px;
+  gap: 72px 16px;
+  justify-content: center;
+}
+@media only screen and (min-width: 768px) {
+  .customers-list-container {
+    gap: 72px 24px;
+  }
 }
 .customers-list-block {
-  width: calc((100% - 24px) / 2);
+  width: calc((100% - 16px) / 2);
   height: 88px;
 }
 @media only screen and (min-width: 768px) {
   .customers-list-block {
-    width: calc((100% - 48px) / 3);
-    height: 88px;
+    width: calc((100% - (48px + 182px)) / 3);
   }
 }
 @media only screen and (min-width: 1158px) {
   .customers-list-block {
     width: calc((100% - 120px) / 6);
-    height: 88px;
   }
 }
 .customers-list-link {
@@ -715,12 +761,15 @@ img {
     display: flex;
     flex-wrap: wrap;
     gap: 72px 24px;
-    justify-content: center;
+    padding: 0 108px;
   }
 }
 @media only screen and (min-width: 1158px) {
   .footer-container {
+    flex-wrap: nowrap;
+    gap: 0;
     align-items: baseline;
+    padding: 0;
   }
 }
 .footer-logo-block {
@@ -886,8 +935,8 @@ input::placeholder {
 }
 .card-link:hover,
 .card-link:focus {
-  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
-    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16),
+    0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 .card-link:hover .overlay,
 .card-link:focus .overlay {
@@ -955,8 +1004,8 @@ input::placeholder {
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
 
-  width: 408px;
-  min-height: 576px;
+  max-width: 408px;
+  min-height: 584px;
   padding: 72px 24px 24px;
 
   background-color: var(--modal-bg);
@@ -965,6 +1014,24 @@ input::placeholder {
   border-radius: 4px;
 
   transition: transform var(--transf-units);
+}
+@media only screen and (max-width: 768px) {
+  .modal {
+    min-width: 408px;
+    min-height: 586px;
+  }
+}
+@media only screen and (max-width: 428px) {
+  .modal {
+    min-width: 392px;
+    padding: 72px 16px 24px;
+  }
+}
+@media only screen and (max-width: 408px) {
+  .modal {
+    min-width: 95%;
+    padding: 72px 16px 24px;
+  }
 }
 .backdrop.is-hidden .modal {
   opacity: 0;
