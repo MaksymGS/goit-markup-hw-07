@@ -9,7 +9,8 @@
   --nav-border: #e7e9fc;
   --icon-color: #8e8f99;
   --modal-bg: #fcfcfc;
-  --nav-border-light: #e7e9fce6;
+  --menu-btn-border: rgba(46, 47, 66, 0.1);
+  --menu-btn-bg: rgba(231, 233, 252, 0.1);
 
   --transf-units: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -66,8 +67,8 @@ img {
   padding: 0 16px;
   margin: 0 auto;
 
-  outline: 2px solid red;
-  outline-offset: -2px;
+  /* outline: 2px solid red;
+  outline-offset: -2px; */
 }
 /* Tablet style */
 @media only screen and (min-width: 768px) {
@@ -213,8 +214,8 @@ img {
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
 }
-/* Text Styles */
 
+/* Text Styles */
 .section-title {
   font-weight: 700;
   font-size: 36px;
@@ -236,7 +237,6 @@ img {
 .descr {
   letter-spacing: 0.02em;
   color: var(--text-descr);
-  /* margin-bottom: 8px; */
 }
 
 .section-team {
@@ -388,9 +388,8 @@ img {
 
   border-radius: 50%;
   color: var(--heeader-color);
-  background-color: var(--nav-border);
-  opacity: 0.1;
-  border: 1px solid var(--heeader-color);
+  background-color: var(--menu-btn-bg);
+  border: 1px solid var(--menu-btn-border);
 
   transition: background-color var(--transf-units), border var(--transf-units);
 }
@@ -414,7 +413,6 @@ img {
   justify-content: space-between;
   align-items: center;
   max-width: 328px;
-  /* Check this */
 }
 .mobile-link {
   display: block;
@@ -454,11 +452,42 @@ img {
   text-align: center;
 
   background-color: var(--heeader-color);
-  background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
-    url(../images/hero-back-image.jpg);
+
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+    url(../images/hero/hero-bg-mob@1x.jpg);
+}
+@media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+  .hero-container {
+    background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+      url(../images/hero/hero-bg-mob@2x.jpg);
+  }
+}
+@media only screen and (min-width: 429px) {
+  .hero-container {
+    background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+      url(../images/hero/hero-bg-tab@1x.jpg);
+  }
+  @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+    .hero-container {
+      background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+        url(../images/hero/hero-bg-tab@2x.jpg);
+    }
+  }
+}
+@media only screen and (min-width: 769px) {
+  .hero-container {
+    background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+      url(../images/hero/hero-bg-desk@1x.jpg);
+  }
+  @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+    .hero-container {
+      background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+        url(../images/hero/hero-bg-desk@2x.jpg);
+    }
+  }
 }
 @media only screen and (max-width: 1158px) {
   .hero-container {
@@ -641,7 +670,7 @@ img {
   max-width: 264px;
 }
 .descr-team {
-  padding-bottom: 8px;
+  margin-bottom: 8px;
 }
 .card-content {
   padding: 32px 0px;
