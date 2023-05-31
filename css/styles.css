@@ -783,14 +783,13 @@ img {
 .footer-container {
   display: block;
   text-align: center;
-  /* align-items: baseline; */
 }
 @media only screen and (min-width: 768px) {
   .footer-container {
     display: flex;
     flex-wrap: wrap;
     gap: 72px 24px;
-    padding: 0 108px;
+    width: 552px;
   }
 }
 @media only screen and (min-width: 1158px) {
@@ -798,7 +797,7 @@ img {
     flex-wrap: nowrap;
     gap: 0;
     align-items: baseline;
-    padding: 0;
+    width: 100%;
   }
 }
 .footer-logo-block {
